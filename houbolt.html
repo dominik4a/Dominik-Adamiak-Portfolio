@@ -10,7 +10,7 @@
   <main>
       <h2>What is this project?</h2>
       <p>The Houbolt Jr. rocket is the first attempt by UTAT (UofT Aerospace Design Team) to make a liquid rocket. Conceptual
-        design is still ongoing, with large scale physical engine tests in the works for 2023 any beyond. Some specifications 
+        design is still ongoing, with large-scale physical engine tests in the works for 2023 and beyond. Some specifications 
         based on the final design driving requirements (taken from the UTAT rocketry wiki) are shown below:
       </p>
       
@@ -93,7 +93,7 @@
     <h2>Fuel System Routing and Plumbing (Fall 2020)</h2>
 
     My first major project (fall of my first year) at UTAT rocketry was to convert PID drawings of the fuel routing and plumbing system into candidate 
-    3D designs in SolidWorks. This was actually my first-ever experiance with SolidWorks and GrabCAD, which while had a very steep
+    3D designs in SolidWorks. This was actually my first-ever experience  with SolidWorks and GrabCAD, which while having a very steep
     learning curve, helped me greatly in future mechanical engineering classes / other projects that required SolidWorks. This was done 
     alongside Andrew Castro.  
 
@@ -109,10 +109,10 @@
     analytical models NASA A and NASA B, the full implicit algorithm for evaluating the length of the liquid phase region of the ethanol 
     film cooling down the combustion chamber as a function of coolant jet hole and other engine/rocket parameters was researched and implemented
     by myself and Natacha Hughes. In the end, the focus shifted to developing a robust ablative system because of the engineering/machining 
-    challanges associated with creating the film coolant injection system in the pintle. 
+    challenges associated with creating the film coolant injection system in the pintle. 
 
     <p>
-      <img src = "pdr_3.jpg" height = 300>
+      <img src = "pdr_3.JPG" height = 300>
       <IMG src = "pdr_4.JPG" height = 300>
     </p>
 
@@ -120,11 +120,11 @@
     <h2>Thermal Resistance Network for Ablative Cooling (Spring - Summer 2021)</h2>
 
     In order to model what ablative materials are required for use in the combustion chamber to survive the expected temperature 
-    conditions over the burn time, with a large margin of saftey, analytical modeling was preformed, in anticipation for future
+    conditions over the burn time, with a large margin of safety, analytical modelling was performed, in anticipation of future
     hot-fire engine tests. The first proposal, prepared by myself and Natacha Hughes, involves using MATLABs PDEToolbox to solve a 
     non-steady heat conduction equation for a cylindrical ring developed by Schoyer. Later on, our task was changed to implement a simpler
     solution based on the NASA Q-star method, where code parameters would be obtained by measuring the ablation rate experimentally,
-    under some future hot-fire test because "trying to solve this with a time-varying PDE is like trying to kill a fly with a tank". The documentation for that is shown <a href="thermal_documentation.pdf">here</a>, written my myself and Kelvin Leong. The code for 
+    under some future hot-fire test because "trying to solve this with a time-varying PDE is like trying to kill a fly with a tank". The documentation for that is shown <a href="thermal_documentation.pdf">here</a>, written by myself and Kelvin Leong. The code for 
     both of these cannot be shared under UTAT IP regulations. 
     
     <h2>TOP Nozzle Contour Generation (Spring 2022)</h2>
@@ -133,15 +133,13 @@
     these in the first place, I wrote a Python script that produced a CSV file of a nozzle contour based on the Rao- Shmyglevsky TOP 
     (thrust-optimised parabola) bell nozzle formulation (a good summary of this can be found <a href="http://www.aspirespace.org.uk/downloads/Thrust%20optimised%20parabolic%20nozzle.pdf">here</a>).
     This script takes in a desired throat radius, inlet radius and inlet angle, and outputs a CSV of the nozzle curve. In addition,
-    if the combustion chamber temperature and pressure is specified, it will also return pressure, chamber temperautre and mach number distributions
-    over the length of the combustion chamber. Image shown is from the source above linked. 
+    if the combustion chamber temperature and pressure are specified, it will also return pressure, chamber temperature and Mach number distributions
+    over the length of the combustion chamber. The image shown is from the source above linked. 
 
     <IMG src = "top_nozzle.JPG" height = 300>
 
 
   </main>
-  <footer>
-    <p>Copyright [Year] | All rights reserved</p>
-  </footer>
+  
 </body>
 </html>
