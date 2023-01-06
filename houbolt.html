@@ -13,75 +13,132 @@
         design is still ongoing, with large scale physical engine tests in the works for 2023 any beyond. Some specifications 
         based on the final design driving requirements (taken from the UTAT rocketry wiki) are shown below:
       </p>
-
+      
+     
+<p>
       <table>
         <tr>
           <th>Spec</th>
+ 
           <th>Quantity</th>
          </tr>
         <tr>
           <td>Thrust</td>
-          <td>2120 N</td>
+          
+          <td>___2120 N</td>
          </tr>
         <tr>
           <td>ISP</td>
-          <td>245s</td>
+          <td>___245s</td>
          </tr>
          <tr>
           <td>Effective Exhaust Velocity</td>
-          <td>2403 m/s</td>
+          <td>___2403 m/s</td>
          </tr>
          <tr>
           <td>Characteristic Velocity</td>
-          <td>1511</td>
+          <td>___1511 m/s</td>
          </tr>
          <tr>
           <td>Engine Pressure</td>
-          <td>350 PSI</td>
+          <td>___350 PSI</td>
          </tr>
          <tr>
           <td>Chamber Temperature</td>
-          <td>2749-2778 K</td>
+          <td>___2749-2778 K</td>
          </tr>
          <tr>
           <td>Target Altitude</td>
-          <td>10,000 ft</td>
+          <td>___10,000 ft</td>
          </tr>
          <tr>
           <td>Ox/Fuel + Ratio</td>
-          <td>N2O/Ethanol 3:1</td>
+          <td>___N2O/Ethanol 3:1</td>
          </tr>
          <tr>
           <td>OX Mass Flow Rate</td>
-          <td>0.8 kg/s</td>
+          <td>___0.8 kg/s</td>
          </tr>
          <tr>
           <td>Fuel Mass Flow Rate</td>
-          <td>0.267 kg/s</td>
+          <td>___0.267 kg/s</td>
          </tr>
          <tr>
           <td>Burn time</td>
-          <td>8.4s</td>
+          <td>___8.4s</td>
          </tr>
          <tr>
           <td>Burnout Altitude</td>
-          <td>1068m</td>
+          <td>___1068m</td>
          </tr>
          <tr>
           <td>Exit Mach Number</td>
-          <td>2.7</td>
+          <td>___2.7</td>
          </tr>
          <tr>
           <td>Expansion Ratio</td>
-          <td>3.9</td>
+          <td>___3.9</td>
          </tr>
          <tr>
           <td>Chamber Length</td>
-          <td>7 inch</td>
+          <td>___7 inch</td>
          </tr>
       </table>
+ 
+      
+      <img src = "rocket_side.JPG" height = 100>
+      </p>
     </section>
+
+    <h2>Fuel System Routing and Plumbing (Fall 2020)</h2>
+
+    My first major project (fall of my first year) at UTAT rocketry was to convert PID drawings of the fuel routing and plumbing system into candidate 
+    3D designs in SolidWorks. This was actually my first-ever experiance with SolidWorks and GrabCAD, which while had a very steep
+    learning curve, helped me greatly in future mechanical engineering classes / other projects that required SolidWorks. This was done 
+    alongside Andrew Castro.  
+
+    <p>
+    <img src = "PID.jpg" height = 400>
+    <IMG src = "rp_1.JPG" height = 400>
+    </p>
+
+    <h2>Film Cooling Investigation (Spring 2021)</h2>
+
+    Early on in the conceptual design of the propulsion system, it was proposed to supplement the primary interior cooling mechanism
+    (ablative liner) with film cooling, to combat the potential for local hotspots in the nozzle and combustion chamber. Using 
+    analytical models NASA A and NASA B, the full implicit algorithm for evaluating the length of the liquid phase region of the ethanol 
+    film cooling down the combustion chamber as a function of coolant jet hole and other engine/rocket parameters was researched and implemented
+    by myself and Natacha Hughes. In the end, the focus shifted to developing a robust ablative system because of the engineering/machining 
+    challanges associated with creating the film coolant injection system in the pintle. 
+
+    <p>
+      <img src = "pdr_3.jpg" height = 300>
+      <IMG src = "pdr_4.JPG" height = 300>
+    </p>
+
+
+    <h2>Thermal Resistance Network for Ablative Cooling (Spring - Summer 2021)</h2>
+
+    In order to model what ablative materials are required for use in the combustion chamber to survive the expected temperature 
+    conditions over the burn time, with a large margin of saftey, analytical modeling was preformed, in anticipation for future
+    hot-fire engine tests. The first proposal, prepared by myself and Natacha Hughes, involves using MATLABs PDEToolbox to solve a 
+    non-steady heat conduction equation for a cylindrical ring developed by Schoyer. Later on, our task was changed to implement a simpler
+    solution based on the NASA Q-star method, where code parameters would be obtained by measuring the ablation rate experimentally,
+    under some future hot-fire test because "trying to solve this with a time-varying PDE is like trying to kill a fly with a tank". The documentation for that is shown <a href="thermal_documentation.pdf">here</a>, written my myself and Kelvin Leong. The code for 
+    both of these cannot be shared under UTAT IP regulations. 
+    
+    <h2>TOP Nozzle Contour Generation (Spring 2022)</h2>
      
+    In our stress analysis of different nozzle segments in ANSYS, we need to import nozzle contour CSV files. In order to generate
+    these in the first place, I wrote a Python script that produced a CSV file of a nozzle contour based on the Rao- Shmyglevsky TOP 
+    (thrust-optimised parabola) bell nozzle formulation (a good summary of this can be found <a href="http://www.aspirespace.org.uk/downloads/Thrust%20optimised%20parabolic%20nozzle.pdf">here</a>).
+    This script takes in a desired throat radius, inlet radius and inlet angle, and outputs a CSV of the nozzle curve. In addition,
+    if the combustion chamber temperature and pressure is specified, it will also return pressure, chamber temperautre and mach number distributions
+    over the length of the combustion chamber. Image shown is from the source above linked. 
+
+    <IMG src = "top_nozzle.JPG" height = 300>
+
+
   </main>
   <footer>
     <p>Copyright [Year] | All rights reserved</p>
